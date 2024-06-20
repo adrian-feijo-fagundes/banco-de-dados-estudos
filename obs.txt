@@ -1,0 +1,19 @@
+npm cache clean --force
+npm install sqlite3
+
+
+`  
+    CREATE TABLE IF NOT EXISTS Funcionarios (
+        id INTEGER PRIMARY KEY,
+        nome TEXT NOT NULL,
+        cargo TEXT,
+        salario REAL
+    )
+`
+
+`
+    INSERT INTO Funcionarios (nome, cargo, salario)
+    VALUES (?, ?, ?) 
+`
+
+
