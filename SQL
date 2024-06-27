@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS loja;
+
+USE loja 
+
+CREATE TABLE IF NOT EXISTS clientes (
+	id_cliente INT PRIMARY KEY
+	nome VARCHAR(100),
+	email VARCHAR(100)
+);
+
+CREATE TABLE IF NOT EXISTS pedidos (
+    id_pedido INT PRIMARY KEY,
+    descricao VARCHAR(100),
+    valor DECIMAL(10,2),
+    id_cliente INT,
+    FOREIGN KEY (id_cliente) REFERENCES clientes (id_cliente)
+);
