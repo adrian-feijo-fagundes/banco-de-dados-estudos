@@ -15,3 +15,16 @@ CREATE TABLE IF NOT EXISTS pedidos (
     id_cliente INT,
     FOREIGN KEY (id_cliente) REFERENCES clientes (id_cliente)
 );
+
+
+INSERT INTO clientes (id_cliente, nome, email) VALUES
+(1,'João Clieton Silva Oliveira Passos','joaozinho666@example.com'),
+(2,'Mario Python','ticomiatrasdoarmario@example.com'),
+(3,'J.J Santos','santojames777@example.com');
+
+
+INSERT INTO produtos (id_pedido, descricao, valor, id_cliente) VALUES
+(101, 'Compra de móveis', 1500.00, 1),
+(102, 'Pedido de eletronicos', 2500.00, 2),
+(103, 'Servicos de instalações', 500.75, 3);
+IN
