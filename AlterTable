@@ -1,0 +1,6 @@
+RENAME TABLE clientes TO lojaClientes; 
+
+USE loja_adrian;
+RENAME TABLE produtos TO lojaProdutos;
+RENAME TABLE pedidos TO lojaPedidos;
+RENAME TABLE itens_pedido TO lojaItensPedido;
