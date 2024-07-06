@@ -1,9 +1,16 @@
-UPDATE AUTORES
-SET DataNascimento = 
+UPDATE LIVROS
+SET Editora = 
     CASE 
-        WHEN ID_Autor = 1 THEN '1949-01-12'
-        WHEN ID_Autor = 2 THEN '1844-10-15'
-        WHEN ID_Autor = 3 THEN '1967-01-12'
-        ELSE DataNascimento  -- manter a DataNascimento existente para IDs não especificados
+        WHEN ID_Livro = 1 THEN 'Editora A'
+        WHEN ID_Livro = 2 THEN 'Editora B'
+        WHEN ID_Livro = 3 THEN 'Editora C'
+        ELSE Editora  -- Manter a Editora existente para IDs não especificados
+    END,
+    NumeroPaginas = 
+    CASE
+        WHEN ID_Livro = 1 THEN 300  -- Número de páginas do livro 1
+        WHEN ID_Livro = 2 THEN 250  -- Número de páginas do livro 2
+        WHEN ID_Livro = 3 THEN 0    -- Número de capítulos do mangá Vagabond
+        ELSE NumeroPaginas  -- Manter o Número de Páginas existente para IDs não especificados
     END
-WHERE ID_Autor IN (1, 2, 3);
+WHERE ID_Livro IN (1, 2, 3);
