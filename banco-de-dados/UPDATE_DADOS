@@ -1,0 +1,9 @@
+UPDATE AUTORES
+SET DataNascimento = 
+    CASE 
+        WHEN ID_Autor = 1 THEN '1949-01-12'
+        WHEN ID_Autor = 2 THEN '1844-10-15'
+        WHEN ID_Autor = 3 THEN '1967-01-12'
+        ELSE DataNascimento  -- manter a DataNascimento existente para IDs não especificados
+    END
+WHERE ID_Autor IN (1, 2, 3);
