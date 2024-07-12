@@ -1,0 +1,13 @@
+INSERT INTO clientes (idCliente, nome, telefone) VALUES
+(1, 'Gustavo Ribero', '98332-2820'),
+(2, 'Sabadão da Silveira', '99234-5678'),
+(3, 'Gnoato da Silva Deftones de Oliveira', '93234-8765');
+
+INSERT INTO Pedidos (idCliente, numeroPedido, valorTotal, datePedido) VALUES
+(1, 'P001', 250.75, '2024-07-12'),
+(2, 'P002', 100.00, '2024-07-15'),
+(3, 'P003', 300.50, '2024-07-20');
+
+
+-- Selecionando a soma dos valores totais dos pedidos ALAIAS
+SELECT SUM(valorTotal) FROM Pedidos;
