@@ -1,0 +1,58 @@
+CREATE DATABASE DesafioAdrian;
+
+
+-- Criando tabela produto
+CREATE TABLE IF NOT EXISTS Produtos (
+    id_Produto INT PRIMARY KEY AUTO_INCREMENT ,
+    nome VARCHAR(100) NOT NULL,
+    categoria VARCHAR(100),
+    preco DECIMAL(10,2) NOT NULL,
+    cor VARCHAR(100),
+    marca VARCHAR(100) NOT NULL,
+    fornecedor VARCHAR(100) NOT NULL,
+    modelo VARCHAR(100),
+);
+
+-- Adicionando produtos
+INSERT IGNORE INTO Produtos (nome, categoria, preco, cor, marca, fornecedor, modelo)
+VALUES 
+    ('Notebook Dell Inspiron 15', 'Notebooks', 2500.00, 'Preto', 'Dell', 'Dell Inc.', 'Inspiron 15'),
+    ('PC Gamer Ryzen 7 GTX 1660', 'Computadores', 4000.00, 'Preto/Vermelho', 'AMD', 'PC Gamer World', 'Ryzen 7 GTX 1660'),
+    ('Samsung Galaxy S21 Ultra', 'Smartphones', 5000.00, 'Preto', 'Samsung', 'Samsung Electronics', 'Galaxy S21 Ultra'),
+    ('Mouse Logitech G502 Hero', 'Periféricos', 300.00, 'Preto', 'Logitech', 'Logitech Inc.', 'G502 Hero'),
+    ('Teclado Corsair K70 RGB', 'Periféricos', 400.00, 'Preto', 'Corsair', 'Corsair Inc.', 'K70 RGB'),
+    ('Monitor Samsung Odyssey G7 27"', 'Monitores', 3000.00, 'Preto', 'Samsung', 'Samsung Electronics', 'Odyssey G7 27"'),
+    ('HP LaserJet Pro MFP M428fdn', 'Impressoras', 2500.00, 'Branco', 'HP', 'HP Inc.', 'LaserJet Pro MFP M428fdn'),
+    ('Sony WH-1000XM4', 'Acessórios', 1500.00, 'Preto', 'Sony', 'Sony Corporation', 'WH-1000XM4'),
+    ('Canon EOS 90D', 'Câmeras', 6000.00, 'Preto', 'Canon', 'Canon Inc.', 'EOS 90D'),
+    ('iPad Pro 12.9"', 'Tablets', 7000.00, 'Prata', 'Apple', 'Apple Inc.', 'iPad Pro 12.9"');
+
+
+
+-- Deletando Produtos 
+
+DELETE FROM Produtos
+WHERE id_Produto = 4;
+
+DELETE FROM Produtos
+WHERE id_Produto = 7;
+
+-- Adicionando coluna
+ALTER TABLE Produtos
+ADD COLUMN esgotado BOOLEAN;
+
+
+-- Adicionando registro sem  estoque
+UPDATE Produtos
+SET esgotado = TRUE 
+WHERE id_Produto != 2;
+
+UPDATE Produtos
+SET esgotado = FALSE
+WHERE id_Produto == 2;
+
+-- Relatório
+SELECT * FROM Produtos
+ORDER BY esgotado DESC, id_Produto ASC,
+LIMIT 5;
+
