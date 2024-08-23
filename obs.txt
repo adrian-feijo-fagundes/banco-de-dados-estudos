@@ -5,4 +5,6 @@ npm install sqlite3
 
 https://github.com/LeoSouzaSenac/UC3
 
+https://tdssl241n-adrianfeijofagundes.alunostds.dev.br/phpmyadmin/index.php?route=/database/routines
+
 D25PY87HS7GUwHf
