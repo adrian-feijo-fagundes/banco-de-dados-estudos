@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS produtos (
     preco DECIMAL(10,2),
     estoque INT    
 );
-
+--3
 CREATE TABLE IF NOT EXISTS pedidos (
     id_pedido INT AUTO_INCREMENT PRIMARY KEY ,
     id_cliente INT,
@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS pedidos (
     estado VARCHAR(100)
     FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente),
 );
-
+--4
 CREATE TABLE IF NOT EXISTS itens_pedido (
     id_itens_pedido INT AUTO_INCREMENT PRIMARY KEY ,
     id_pedido INT,
