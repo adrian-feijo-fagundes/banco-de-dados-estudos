@@ -1,0 +1,29 @@
+SELECT
+FROM
+WHERE
+ORDER BY
+
+
+Selecionando intervalos 
+
+WHERE ano BETWEEN 2014 AND 2018; 
+WHERE ano IN (2014 , 2015);
+
+
+SELECT CONCAT(primeiro_nome, ' ', sobrenome) AS nome_completo FROM usuarios;
+
+Operadores lógicos
+
+AND
+OR
+
+LIKE - parecido
+'%a' - termina com a
+'a%' - começa com a
+'%a%' - qualquer lugar
+'_' - exige que tenha algo
+NOT LIKE
+
+
+
+DISTINC - mostra apenas uma ocorrencia
