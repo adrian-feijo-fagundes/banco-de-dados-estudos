@@ -45,3 +45,20 @@ LIMIT 3;
 -- CONSULTA DE VALORES UNICOS
 SELECT DISTINCT email
 FROM Clientes;
+
+
+---------------------
+SELECT departamento_id FROM departamentos WHERE localizacao = 'São Paulo';
+
+
+SELECT nome, departamento_id 
+FROM empregados
+WHERE departamento_id IN (SELECT departamento_id FROM departamentos WHERE localizacao = 'São Paulo');
+
+
+SELECT salario FROM empregados WHERE departamento_id = (SELECT departamento_id FROM departamentos WHERE nome = 'TI');
+
+
+SELECT nome, salario
+FROM empregados
+WHERE salario > ANY (SELECT salario FROM empregados WHERE departamento_id = (SELECT departamento_id FROM departamentos WHERE nome = 'TI'));

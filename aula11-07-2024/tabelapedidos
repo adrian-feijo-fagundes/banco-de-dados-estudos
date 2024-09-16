@@ -1,8 +1,0 @@
-CREATE TABLE Pedidos (
-    idPedido INT AUTO_INCREMENT PRIMARY KEY,
-    idCliente INT,
-    numeroPedido VARCHAR(50),
-    valorTotal DECIMAL(10,2),
-    datePedido DATE,
-    FOREIGN KEY (idCliente) REFERENCES Clientes(idClientes)
-)
